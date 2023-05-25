@@ -1,18 +1,5 @@
 package guru.springframework.spring6restmvc.bootstrap;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.List;
-import java.util.UUID;
-
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.ResourceUtils;
-
 import guru.springframework.spring6restmvc.entities.Beer;
 import guru.springframework.spring6restmvc.entities.Customer;
 import guru.springframework.spring6restmvc.model.BeerCSVRecord;
@@ -22,6 +9,18 @@ import guru.springframework.spring6restmvc.repositories.CustomerRepository;
 import guru.springframework.spring6restmvc.services.BeerCsvService;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.ResourceUtils;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
+import java.util.UUID;
 
 /**
  * Created by jt, Spring Framework Guru.
@@ -72,7 +71,7 @@ public class BootstrapData implements CommandLineRunner {
         }
     }
 
-	private void loadBeerData() {
+    private void loadBeerData() {
         if (beerRepository.count() == 0){
             Beer beer1 = Beer.builder()
                     .beerName("Galaxy Cat")
